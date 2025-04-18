@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Wave</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+</head>
+<body>
+    <div class="player-container">
+        <div class="player-header">
+        </div>
+
+        <div class="now-playing">
+            <div class="album-art">
+                <img id="album-art" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%23333'/%3E%3Ccircle cx='100' cy='100' r='20' fill='%23666'/%3E%3C/svg%3E" alt="Album Art">
+            </div>
+            <div class="track-info">
+                <h2 id="track-title">No Track Selected</h2>
+                <p id="track-artist">Select a track to begin</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+            
+            <div class="buttons">
+                <button id="prev-btn" class="control-btn"><i class="fas fa-backward"></i></button>
+                <button id="shuffle-btn" class="control-btn"><i class="fas fa-random"></i></button>
+                <button id="play-btn" class="control-btn primary"><i class="fas fa-play"></i></button>
+                <button id="repeat-btn" class="control-btn"><i class="fas fa-redo"></i></button>
+                <button id="next-btn" class="control-btn"><i class="fas fa-forward"></i></button>
+            </div>
+            
+            <div class="volume-container">
+                <i class="fas fa-volume-up"></i>
+                <div class="volume-slider">
+                    <div class="volume-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="library-container">
+        <div class="library-header">
+            <h3>Your Library</h3>
+            <div class="upload-container">
+                <button id="upload-btn" class="btn"><i class="fas fa-upload"></i> Upload Music</button>
+                <input type="file" id="file-upload" accept="audio/*" multiple style="display: none;">
+            </div>
+        </div>
+        <ul id="playlist" class="playlist">
+        </ul>
+    </div>
+
+    <div id="visualizer-container">
+        <canvas id="visualizer"></canvas>
+    </div>
+
+    <audio id="audio-player"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
